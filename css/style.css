@@ -1,145 +1,88 @@
-body{
-    height: 97.8vh;
-    background-image: linear-gradient(rgb(195, 209, 61), black);
+body {
+  height: 97.8vh;
+  background-image: linear-gradient(rgb(195, 209, 61), black);
 }
-.logo{
-    display: block;
-    margin:auto;
-    width: 50px;
-    height: 50px;
+.logo {
+  display: block;
+  margin: auto;
+  width: 50px;
+  height: 50px;
 }
-
-h1{
-    margin-top: 5px;
-    font-size: 30px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
+h1 {
+  margin-top: 5px;
+  font-size: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
 }
-
-.container{
-    max-width: 955px;
-    border: 2px solid black;
-    border-radius: 13px;
-    margin: auto;
-    height: 60vh;
-    padding: 33px;
-    overflow-y: auto;
-    margin-bottom: 23px;
+.container {
+  max-width: 955px;
+  border: 2px solid black;
+  border-radius: 13px;
+  margin: auto;
+  height: 60vh;
+  padding: 33px;
+  overflow-y: auto;
+  margin-bottom: 23px;
+  scrollbar-width: none; 
 }
-
-.message{
-    background-color: rgb(182, 178, 160);
-    width: 24%;
-    padding: 10px;
-    margin: 17px 2px;
-    border: 2px solid black;
-    border-radius: 10px;
+.message {
+  background-color: rgb(182, 178, 160);
+  width: 24%;
+  padding: 10px;
+  margin: 17px 2px;
+  border: 2px solid black;
+  border-radius: 10px;
+  clear: both;
+  float: left;
+  animation: fadeInUp 0.3s ease-in-out;
+  transition: background-color 0.3s ease;
 }
-.left{
-    float: left;
-    clear: both;
+.message.right {
+  float: right;
 }
-.right{
-    float: right;
-    clear: both;
+.message:hover {
+  background-color: rgb(200, 196, 170);
 }
-#send-container{
-    text-align: center;
-    max-width: 1085px;
-    width: 100%;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#send-container {
+  max-width: 1085px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-#messageInp{
-    width: 80%;
-    border: 2px solid black;
-    border-radius: 6px;
-    height: 34px; 
-    font-size: 22px;  
+#messageInp {
+  width: 80%;
+  border: 2px solid black;
+  border-radius: 6px;
+  height: 34px;
+  font-size: 22px;
+  transition: box-shadow 0.3s ease-in-out;
 }
-.btn{
-    margin: 0px 5px;
-    width: 9%;
-    cursor: pointer;
-    border: 2px solid black;
-    border-radius: 6px;
-    height: 34px;
+#messageInp:focus {
+  outline: none;
+  box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
 }
-
-
-/* Animations */
+.btn {
+  margin: 0 5px;
+  width: 9%;
+  cursor: pointer;
+  border: 2px solid black;
+  border-radius: 6px;
+  height: 34px;
+  transition: background-color 0.3s, color 0.3s;
+}
+.btn:hover {
+  background-color: #333;
+  color: white;
+}
 @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  
-  .message {
-    animation: fadeInUp 0.3s ease-in-out;
-    transition: background-color 0.3s ease;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .message:hover {
-    background-color: rgb(200, 196, 170);
-  }
-  
-  /* Button animation */
-  .btn:hover {
-    background-color: #333;
-    color: white;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  /* Input focus */
-  #messageInp:focus {
-    outline: none;
-    box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s ease-in-out;
-  }
-
-  
-  @media (max-width: 768px) {
-    .container {
-      height: 50vh;
-      padding: 15px;
-    }
-  
-    .message {
-      width: 70%;
-      font-size: 16px;
-      margin: 10px auto;
-    }
-  
-    #send-container {
-      flex-direction: column;
-      gap: 10px;
-      padding: 10px;
-    }
-  
-    #messageInp {
-      width: 100%;
-      font-size: 18px;
-    }
-  
-    .btn {
-      width: 100%;
-      font-size: 18px;
-    }
-  
-    h1 {
-      font-size: 24px;
-    }
-  
-    .logo {
-      width: 40px;
-      height: 40px;
-    }
-  }
-  
+}
